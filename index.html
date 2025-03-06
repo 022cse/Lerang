@@ -18,6 +18,12 @@
             padding: 20px;
             text-align: center;
         }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
         .container {
             padding: 20px;
             text-align: center;
@@ -48,6 +54,33 @@
             color: #ff6347; 
             margin-top: 10px;
         }
+        /* Tab Navigation */
+        .tabs {
+            margin-top: 20px;
+        }
+        .tab {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #228B22;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .tab:hover {
+            background-color: #1a6e1a;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 10px;
+            background-color: #fff;
+        }
+        .active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -55,10 +88,10 @@
 <header>
     <h1>Explore the Safari</h1>
     <nav>
-<a href="index.html">Home</a> |
-<a href="about.html">About</a> |
-<a href="contact.html">Contact</a>
-</nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
 </header>
 
 <div class="container">
@@ -66,9 +99,34 @@
     
     <div class="description">
         <h2>Discover SaFARi - Adventure Awaits</h2>
-        <p>At SaFARi, we believe in offering more than just a trip. We provide unforgettable safari experiences that bring you face-to-face with the stunning wildlife and landscapes of Africa. Whether you're tracking the majestic Big Five or immersing yourself in the beauty of the African savannah, our expertly guided tours ensure you get the most out of your adventure.</p>
-        <p>We take pride in our commitment to sustainability, responsible travel, and providing safe, immersive experiences for all our guests. From our knowledgeable local guides to our customized itineraries, SaFARi is dedicated to making your dream safari a reality.</p>
+        <p>At SaFARi, we offer unforgettable experiences, bringing you face-to-face with Africa’s stunning wildlife. From tracking the majestic Big Five to immersing yourself in the beauty of the savannah, our expert guides ensure you have an adventure of a lifetime.</p>
         <p><strong>Slogan:</strong> <em>"We put the FAR in SaFARi"</em></p>
+    </div>
+
+    <!-- Tabs for Interactive Sections -->
+    <div class="tabs">
+        <span class="tab" onclick="showTab('accommodation')">Accommodation</span>
+        <span class="tab" onclick="showTab('activities')">Activities</span>
+        <span class="tab" onclick="showTab('food')">Food</span>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="accommodation" class="tab-content">
+        <h2>Accommodation</h2>
+        <p>Stay in luxury lodges, tented camps, or eco-friendly resorts surrounded by nature.</p>
+        <img src="https://media.istockphoto.com/id/1059304304/photo/wooden-bungalow-in-savanna.jpg?s=1024x1024&w=is&k=20&c=En7KQ11GZVzFHQr2VP28cRlDmfH8Wxre5RcdtMY2p6I=" alt="Safari Lodge">
+    </div>
+
+    <div id="activities" class="tab-content">
+        <h2>Activities</h2>
+        <p>Experience thrilling game drives, hot air balloon rides, and cultural village tours.</p>
+        <img src="https://media.istockphoto.com/id/537226320/photo/hot-air-balloons-over-the-masai-mara.jpg?s=1024x1024&w=is&k=20&c=QxMKjKNwz3w94DdT3ZwhRh90dp5VQqVRHeKJf08RgF0=" alt="Hot Air Balloon Safari">
+    </div>
+
+    <div id="food" class="tab-content">
+        <h2>Food</h2>
+        <p>Enjoy traditional African cuisine, including grilled meats, stews, and exotic fruits.</p>
+        <img src="https://media.istockphoto.com/id/1033681952/photo/african-food-chicken-peanut-stew.jpg?s=1024x1024&w=is&k=20&c=k0AE7E-d1xlVWxjlZCpmnaBPbJJMoSdz6TWbWxM9F2I=" alt="African Cuisine">
     </div>
 </div>
 
@@ -76,6 +134,20 @@
     <p>Visit our website for more details: <a href="https://www.safariadventure.com" style="color: white; text-decoration: none;">www.safariadventure.com</a></p>
 </footer>
 
+<script>
+    function showTab(tabId) {
+        // Hide all tab content
+        var contents = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].style.display = "none";
+        }
+
+        // Show the selected tab content
+        document.getElementById(tabId).style.display = "block";
+    }
+</script>
+
 </body>
 </html>
+
 
