@@ -105,16 +105,21 @@
         <p><strong>Slogan:</strong> <em>"We put the FAR in SaFARi"</em></p>
     </div>
 
+    <!-- Tabs for Interactive Sections -->
     <div class="tabs">
         <span class="tab" onclick="showTab('accommodation')">Accommodation</span>
         <span class="tab" onclick="showTab('activities')">Activities</span>
         <span class="tab" onclick="showTab('food')">Food</span>
     </div>
 
+    <!-- Tab Content -->
+
+    <!-- Accommodation Tab -->
     <div id="accommodation" class="tab-content active">
         <h2>Accommodation</h2>
         <p>Stay in luxury lodges, tented camps, or eco-friendly resorts surrounded by nature.</p>
         
+        <!-- Accommodation Items -->
         <div class="accommodation-item">
             <img src="https://media.istockphoto.com/id/1059304304/photo/wooden-bungalow-in-savanna.jpg?s=1024x1024&w=is&k=20&c=En7KQ11GZVzFHQr2VP28cRlDmfH8Wxre5RcdtMY2p6I=" alt="Safari Lodge">
             <h3>Luxury Lodges</h3>
@@ -134,10 +139,12 @@
         </div>
     </div>
 
+    <!-- Activities Tab -->
     <div id="activities" class="tab-content">
         <h2>Activities</h2>
         <p>Experience thrilling game drives, hot air balloon rides, and cultural village tours.</p>
         
+        <!-- Activity Items -->
         <div class="activity-item">
             <img src="https://media.istockphoto.com/id/537226320/photo/hot-air-balloons-over-the-masai-mara.jpg?s=1024x1024&w=is&k=20&c=QxMKjKNwz3w94DdT3ZwhRh90dp5VQqVRHeKJf08RgF0=" alt="Hot Air Balloon Safari">
             <h3>Game Drives</h3>
@@ -157,10 +164,12 @@
         </div>
     </div>
 
+    <!-- Food Tab -->
     <div id="food" class="tab-content">
         <h2>Food</h2>
         <p>Enjoy traditional African cuisine, including grilled meats, stews, and exotic fruits. Here are some of the must-try dishes:</p>
         
+        <!-- Food Items -->
         <div class="food-item">
             <img src="https://media.istockphoto.com/id/1292995225/photo/seswaa-and-pap.jpg?s=1024x1024&w=is&k=20&c=KtkLVhjQ8XH0Of0aaot1psxtVXGpny5Q5btFd_X6w0s=" alt="Seswaa and Pap">
             <h3>Seswaa and Pap</h3>
@@ -193,9 +202,11 @@
             contents[i].style.display = "none";
         }
 
+        // Show the content for the clicked tab
         document.getElementById(tabId).style.display = "block";
     }
 
+    // Initially show the first tab content
     window.onload = function() {
         showTab('accommodation');
     }
@@ -203,3 +214,4 @@
 
 </body>
 </html>
+
