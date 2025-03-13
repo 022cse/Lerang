@@ -6,6 +6,10 @@
     <title>SaFARi Adventure</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tab-content { display: none; }
+        .active { display: block; }
+    </style>
 </head>
 <body>
 
@@ -41,7 +45,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Accommodation</h5>
                     <p class="card-text">Choose from luxury lodges, tented camps, or eco-friendly resorts.</p>
-                    <a href="#accommodation" class="btn btn-success">Explore Options</a>
+                    <button class="btn btn-success" onclick="showTab('accommodation')">Explore Options</button>
                 </div>
             </div>
         </div>
@@ -51,7 +55,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Activities</h5>
                     <p class="card-text">Enjoy thrilling game drives, hot air balloon rides, and cultural village tours.</p>
-                    <a href="#activities" class="btn btn-success">See Activities</a>
+                    <button class="btn btn-success" onclick="showTab('activities')">See Activities</button>
                 </div>
             </div>
         </div>
@@ -61,53 +65,47 @@
                 <div class="card-body">
                     <h5 class="card-title">Food</h5>
                     <p class="card-text">Taste the rich flavors of African cuisine, including Seswaa and Pap.</p>
-                    <a href="#food" class="btn btn-success">View Menu</a>
+                    <button class="btn btn-success" onclick="showTab('food')">View Menu</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Accommodation Section -->
-<div id="accommodation" class="container my-5">
+<!-- Sections -->
+<div id="accommodation" class="container my-5 tab-content">
     <h2>Accommodation</h2>
-    <p>Choose from a variety of accommodation options.</p>
-    <ul>
-        <li>Luxury Lodges</li>
-        <li>Tented Camps</li>
-        <li>Eco-Friendly Resorts</li>
-    </ul>
+    <div class="row">
+        <div class="col-md-4"><img src="https://chobenationalpark.co.za/wp-content/uploads/2019/10/Savute-Safari-Lodge-Guest-Room-Interior2.jpg" class="img-fluid rounded"></div>
+        <div class="col-md-4"><img src="https://virtuoso-prod.dotcms.cloud/dA/2cf23eaf-dcbf-4f2f-9a38-149962facd43/previewImage/TentedCamps_preview.jpg" class="img-fluid rounded"></div>
+        <div class="col-md-4"><img src="https://www.eco-tropicalresorts.com/wp-content/uploads/2014/04/tropical-resorts-hotels.jpg" class="img-fluid rounded"></div>
+    </div>
 </div>
 
-<!-- Activities Section -->
-<div id="activities" class="container my-5">
+<div id="activities" class="container my-5 tab-content">
     <h2>Activities</h2>
-    <p>Exciting activities to explore.</p>
-    <ul>
-        <li>Game Drives</li>
-        <li>Hot Air Balloon Rides</li>
-        <li>Cultural Village Tours</li>
-    </ul>
+    <div class="row">
+        <div class="col-md-4"><img src="https://www.andbeyond.com/wp-content/uploads/sites/5/Male-Lion-in-a-typical-scene-on-a-game-drive.jpg" class="img-fluid rounded"></div>
+        <div class="col-md-4"><img src="https://www.siyabona.com/images/mara-ballooning-hot-air-ballooning-safari-786x416.jpg" class="img-fluid rounded"></div>
+        <div class="col-md-4"><img src="https://www.matriarchafrica.com/wp-content/uploads/2018/07/Victoria-Falls-Village-Tour.jpg" class="img-fluid rounded"></div>
+    </div>
 </div>
 
-<!-- Food Section -->
-<div id="food" class="container my-5">
+<div id="food" class="container my-5 tab-content">
     <h2>Food</h2>
-    <p>Experience traditional African cuisine.</p>
-    <ul>
-        <li>Seswaa and Pap</li>
-        <li>Rice and Chicken</li>
-        <li>Sorghum and Beef</li>
-    </ul>
+    <div class="row">
+        <div class="col-md-4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkQC6w5xkuYzbsjRBEMbKoXUptPmOgdDuKjw&s" class="img-fluid rounded"></div>
+        <div class="col-md-4"><img src="https://www.simplyrecipes.com/thmb/KU-Q1xCeSjcMHLfGVvYUiQoBknA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Chicken-Rice-Casserole-LEAD-2-01230ff397ac4b35958e8ffe9857fca6.jpg" class="img-fluid rounded"></div>
+        <div class="col-md-4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScQ7GUDG-uLrfsre4YdDYImYg-J-8dsYdiVqKPymwMcix33qyvKpG97B54oXKw08DSxbg&usqp=CAU" class="img-fluid rounded"></div>
+    </div>
 </div>
 
-<footer class="bg-success text-white text-center py-3">
-    <p>Visit our website: <a href="https://www.safariadventure.com" class="text-white">www.safariadventure.com</a></p>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script>
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+    }
+</script>
 
 </body>
 </html>
