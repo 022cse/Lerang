@@ -1,44 +1,87 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>About Me</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #228B22;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        img {
+            width: 200px; /* You can adjust the size */
+            height: 200px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #228B22;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-
-<h1>About Me</h1>
-
-<nav>
-
-<a href="index.html">Home</a> |
-
-<a href="about.html">About</a> |
-
-<a href="contact.html">Contact</a>
-
-</nav>
-
+    <h1>About Me</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
 </header>
 
-
 <main>
+    <div class="container">
+        <!-- Your image here -->
+        <img src="your-photo.jpg" alt="Your Photo"> <!-- Replace with your actual image path -->
 
-<p>Hi! I'm a beginner web developer learning how to use GitHub Pages.</p>
-<p>This is my first multi-page website, and im excited to share it with!</p>
+        <div class="description">
+            <h2>Hi! I'm a Beginner Web Developer</h2>
+            <p>This is my first multi-page website, and I'm excited to share it with you!</p>
+
+            <h3>How the Idea of This Website Came About</h3>
+            <p>The idea for this website came from my passion for learning web development. I wanted to create something simple and personal to showcase my journey and learn how to make functional web pages. As a beginner, I wanted to try working with multiple pages, including a home page, an about page, and a contact page. This project was a great way to start experimenting with basic web design and GitHub Pages.</p>
+        </div>
+    </div>
 </main>
 
-<foot>
-<p>&copy: 2025 Lerang</p>
+<footer>
+    <p>Visit my website for more details: <a href="https://www.safariadventure.com" style="color: white; text-decoration: none;">www.safariadventure.com</a></p>
 </footer>
+
 </body>
+
 </html>
