@@ -102,15 +102,13 @@
         <p><strong>Slogan:</strong> <em>"We put the FAR in SaFARi"</em></p>
     </div>
 
-    <!-- Tabs for Interactive Sections -->
     <div class="tabs">
         <span class="tab" onclick="showTab('accommodation')">Accommodation</span>
         <span class="tab" onclick="showTab('activities')">Activities</span>
         <span class="tab" onclick="showTab('food')">Food</span>
     </div>
 
-    <!-- Tab Content -->
-    <div id="accommodation" class="tab-content">
+    <div id="accommodation" class="tab-content active">
         <h2>Accommodation</h2>
         <p>Stay in luxury lodges, tented camps, or eco-friendly resorts surrounded by nature.</p>
         <img src="https://media.istockphoto.com/id/1059304304/photo/wooden-bungalow-in-savanna.jpg?s=1024x1024&w=is&k=20&c=En7KQ11GZVzFHQr2VP28cRlDmfH8Wxre5RcdtMY2p6I=" alt="Safari Lodge">
@@ -135,18 +133,25 @@
 
 <script>
     function showTab(tabId) {
-        // Hide all tab content
         var contents = document.getElementsByClassName("tab-content");
         for (var i = 0; i < contents.length; i++) {
             contents[i].style.display = "none";
         }
 
-        // Show the selected tab content
+        var tabs = document.getElementsByClassName("tab");
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+        }
+
         document.getElementById(tabId).style.display = "block";
+
+        event.target.classList.add("active");
+    }
+
+    window.onload = function() {
+        showTab('accommodation');
     }
 </script>
 
 </body>
 </html>
-
-
