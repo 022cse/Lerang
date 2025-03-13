@@ -48,12 +48,6 @@
             width: 100%;
             bottom: 0;
         }
-        .slogan {
-            font-style: italic; 
-            font-size: 24px;
-            color: #ff6347; 
-            margin-top: 10px;
-        }
         .tabs {
             margin-top: 20px;
         }
@@ -79,6 +73,15 @@
         }
         .active {
             display: block;
+        }
+        .food-item, .activity-item, .accommodation-item {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+        .food-item img, .activity-item img, .accommodation-item img {
+            width: 60%;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -111,19 +114,70 @@
     <div id="accommodation" class="tab-content active">
         <h2>Accommodation</h2>
         <p>Stay in luxury lodges, tented camps, or eco-friendly resorts surrounded by nature.</p>
-        <img src="https://media.istockphoto.com/id/1059304304/photo/wooden-bungalow-in-savanna.jpg?s=1024x1024&w=is&k=20&c=En7KQ11GZVzFHQr2VP28cRlDmfH8Wxre5RcdtMY2p6I=" alt="Safari Lodge">
+        
+        <div class="accommodation-item">
+            <img src="https://media.istockphoto.com/id/1059304304/photo/wooden-bungalow-in-savanna.jpg?s=1024x1024&w=is&k=20&c=En7KQ11GZVzFHQr2VP28cRlDmfH8Wxre5RcdtMY2p6I=" alt="Safari Lodge">
+            <h3>Luxury Lodges</h3>
+            <p>Enjoy luxurious lodges with incredible views and top-notch amenities in the heart of nature.</p>
+        </div>
+
+        <div class="accommodation-item">
+            <img src="https://media.istockphoto.com/id/1160642883/photo/tented-camp.jpg?s=1024x1024&w=is&k=20&c=d7p_wzHgF5nZv8dT0dsNCeFcOZ1AFO4zdoHVsHeo6u0=" alt="Tented Camps">
+            <h3>Tented Camps</h3>
+            <p>Experience the thrill of staying in tented camps that bring you closer to nature while providing comfort.</p>
+        </div>
+
+        <div class="accommodation-item">
+            <img src="https://media.istockphoto.com/id/1173894862/photo/eco-friendly-resort.jpg?s=1024x1024&w=is&k=20&c=zDCaqD14Qoc5cBrMy9hpcqBzxCSHEfnF0K9UkD4XpiI=" alt="Eco-Friendly Resort">
+            <h3>Eco-Friendly Resorts</h3>
+            <p>Relax in eco-resorts that combine sustainability with comfort, offering a tranquil escape in nature.</p>
+        </div>
     </div>
 
     <div id="activities" class="tab-content">
         <h2>Activities</h2>
         <p>Experience thrilling game drives, hot air balloon rides, and cultural village tours.</p>
-        <img src="https://media.istockphoto.com/id/537226320/photo/hot-air-balloons-over-the-masai-mara.jpg?s=1024x1024&w=is&k=20&c=QxMKjKNwz3w94DdT3ZwhRh90dp5VQqVRHeKJf08RgF0=" alt="Hot Air Balloon Safari">
+        
+        <div class="activity-item">
+            <img src="https://media.istockphoto.com/id/537226320/photo/hot-air-balloons-over-the-masai-mara.jpg?s=1024x1024&w=is&k=20&c=QxMKjKNwz3w94DdT3ZwhRh90dp5VQqVRHeKJf08RgF0=" alt="Hot Air Balloon Safari">
+            <h3>Game Drives</h3>
+            <p>Embark on exciting game drives to spot wildlife in their natural habitat, guided by expert rangers.</p>
+        </div>
+
+        <div class="activity-item">
+            <img src="https://media.istockphoto.com/id/836048506/photo/balloon-ride-over-africa.jpg?s=1024x1024&w=is&k=20&c=YPvjIq3HzyUznpGcJjUq7m8fnp9Gmy27h_Y88xFie-0=" alt="Hot Air Balloon Ride">
+            <h3>Hot Air Balloon Rides</h3>
+            <p>Take in breathtaking aerial views of the savannah as you soar over the wilderness in a hot air balloon.</p>
+        </div>
+
+        <div class="activity-item">
+            <img src="https://media.istockphoto.com/id/471122616/photo/african-village-tour.jpg?s=1024x1024&w=is&k=20&c=QLOs6dIu3ndgeS_ufGua2RVEbrdHZlhNHn9FzTYwn9I=" alt="Village Tours">
+            <h3>Cultural Village Tours</h3>
+            <p>Explore traditional villages and learn about the rich cultures and history of the African people.</p>
+        </div>
     </div>
 
     <div id="food" class="tab-content">
         <h2>Food</h2>
-        <p>Enjoy traditional African cuisine, including grilled meats, stews, and exotic fruits.</p>
-        <img src="https://media.istockphoto.com/id/1033681952/photo/african-food-chicken-peanut-stew.jpg?s=1024x1024&w=is&k=20&c=k0AE7E-d1xlVWxjlZCpmnaBPbJJMoSdz6TWbWxM9F2I=" alt="African Cuisine">
+        <p>Enjoy traditional African cuisine, including grilled meats, stews, and exotic fruits. Here are some of the must-try dishes:</p>
+        
+        <div class="food-item">
+            <img src="https://media.istockphoto.com/id/1292995225/photo/seswaa-and-pap.jpg?s=1024x1024&w=is&k=20&c=KtkLVhjQ8XH0Of0aaot1psxtVXGpny5Q5btFd_X6w0s=" alt="Seswaa and Pap">
+            <h3>Seswaa and Pap</h3>
+            <p>A traditional dish consisting of slow-cooked beef served with a soft maize meal called pap.</p>
+        </div>
+        
+        <div class="food-item">
+            <img src="https://media.istockphoto.com/id/1309174457/photo/rice-and-chicken.jpg?s=1024x1024&w=is&k=20&c=okAqk3o9Oh4ql7uH-E72ioK5FJWojl9OUp0Gl_DhJ5s=" alt="Rice and Chicken">
+            <h3>Rice and Chicken</h3>
+            <p>A simple but delicious dish of rice and flavorful chicken, often served with a side of vegetables or salad.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="https://media.istockphoto.com/id/1131308427/photo/sorghum-and-beef.jpg?s=1024x1024&w=is&k=20&c=7yBUhHk0JY-0gdJjEXovKY8hnlHfs3jVj_9ZdLbu7gY=" alt="Sorghum and Beef">
+            <h3>Sorghum and Beef</h3>
+            <p>A nutritious dish combining sorghum grains with tender beef cooked in a rich, flavorful sauce.</p>
+        </div>
     </div>
 </div>
 
@@ -133,19 +187,13 @@
 
 <script>
     function showTab(tabId) {
+        // Hide all tab content
         var contents = document.getElementsByClassName("tab-content");
         for (var i = 0; i < contents.length; i++) {
             contents[i].style.display = "none";
         }
 
-        var tabs = document.getElementsByClassName("tab");
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove("active");
-        }
-
         document.getElementById(tabId).style.display = "block";
-
-        event.target.classList.add("active");
     }
 
     window.onload = function() {
