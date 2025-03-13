@@ -80,14 +80,17 @@
         <div class="col-md-4">
             <img src="https://chobenationalpark.co.za/wp-content/uploads/2019/10/Savute-Safari-Lodge-Guest-Room-Interior2.jpg" class="img-fluid rounded">
             <h5>Luxury Lodges</h5>
+            <p>Stay in high-end lodges with stunning views and premium services.</p>
         </div>
         <div class="col-md-4">
             <img src="https://virtuoso-prod.dotcms.cloud/dA/2cf23eaf-dcbf-4f2f-9a38-149962facd43/previewImage/TentedCamps_preview.jpg" class="img-fluid rounded">
             <h5>Tented Camps</h5>
+            <p>Experience the wild in comfort with tented accommodations close to nature.</p>
         </div>
         <div class="col-md-4">
             <img src="https://www.eco-tropicalresorts.com/wp-content/uploads/2014/04/tropical-resorts-hotels.jpg" class="img-fluid rounded">
             <h5>Eco-Friendly Resorts</h5>
+            <p>Relax in sustainable resorts that blend luxury with environmental conservation.</p>
         </div>
     </div>
 </div>
@@ -96,7 +99,7 @@
     function showTab(tabId) {
         document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
         document.getElementById(tabId).classList.add('active');
-        document.getElementById(tabId).scrollIntoView({ behavior: 'smooth' });
+        window.scrollTo({ top: document.getElementById(tabId).offsetTop - 80, behavior: 'smooth' });
     }
 </script>
 
