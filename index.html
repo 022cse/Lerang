@@ -1,122 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaFARi Adventure</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaFARi Adventure</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .tab-content { display: none; }
-        .active { display: block; }
-        html { scroll-behavior: smooth; }
-        .food-img, .accommodation-img, .activity-img { width: 100%; height: 250px; object-fit: cover; }
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+        }
+        header {
+            background: linear-gradient(to right, #2a9d8f, #264653);
+            backdrop-filter: blur(10px);
+        }
+        header nav {
+            background-color: rgba(40, 40, 40, 0.6);
+        }
+        .navbar-brand {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+        }
+        .navbar-nav .nav-item .nav-link {
+            font-size: 1.1rem;
+            color: #fff;
+            padding: 10px 15px;
+        }
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: #264653;
+            border-radius: 5px;
+        }
+        .btn-success {
+            background-color: #2a9d8f;
+            border-color: #2a9d8f;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-success:hover {
+            background-color: #264653;
+            border-color: #264653;
+            transform: scale(1.05);
+        }
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #264653;
+        }
+        h5 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a9d8f;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .accommodation-img, .activity-img, .food-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .accommodation-img:hover, .activity-img:hover, .food-img:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .my-5 {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        .text-center {
+            margin-bottom: 40px;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        img, h5, p {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        img:nth-of-type(1), h5:nth-of-type(1), p:nth-of-type(1) {
+            animation-delay: 0.2s;
+        }
+        img:nth-of-type(2), h5:nth-of-type(2), p:nth-of-type(2) {
+            animation-delay: 0.4s;
+        }
+        img:nth-of-type(3), h5:nth-of-type(3), p:nth-of-type(3) {
+            animation-delay: 0.6s;
+        }
     </style>
 </head>
 <body>
-
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">SaFARi Adventure</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="about.html">About</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-<div class="container my-5 text-center">
-    <img src="https://artofsafari.travel/wp-content/uploads/2020/04/Shutterstock_Kenya_MasaiMara_Wildlife_GiraffePair.jpg" class="img-fluid rounded shadow" alt="Safari Giraffes">
-    <h2 class="mt-4">Discover SaFARi - Adventure Awaits</h2>
-    <p class="lead">Experience Africa’s stunning wildlife with expert guides for a lifetime adventure.</p>
-</div>
-
-<div class="container my-5 text-center">
-    <button class="btn btn-success" onclick="showTab('accommodation')">Explore Accommodation</button>
-    <button class="btn btn-success" onclick="showTab('activities')">Explore Activities</button>
-    <button class="btn btn-success" onclick="showTab('food')">Explore Food</button>
-</div>
-
-<!-- Sections -->
-<div id="accommodation" class="container my-5 tab-content">
-    <h2>Accommodation</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <img src="https://chobenationalpark.co.za/wp-content/uploads/2019/10/Savute-Safari-Lodge-Guest-Room-Interior2.jpg" class="img-fluid rounded accommodation-img">
-            <h5>Luxury Lodges</h5>
-            <p>Stay in high-end lodges with stunning views and premium services.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="https://virtuoso-prod.dotcms.cloud/dA/2cf23eaf-dcbf-4f2f-9a38-149962facd43/previewImage/TentedCamps_preview.jpg" class="img-fluid rounded accommodation-img">
-            <h5>Tented Camps</h5>
-            <p>Experience the wild in comfort with tented accommodations close to nature.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="https://www.eco-tropicalresorts.com/wp-content/uploads/2014/04/tropical-resorts-hotels.jpg" class="img-fluid rounded accommodation-img">
-            <h5>Eco-Friendly Resorts</h5>
-            <p>Relax in sustainable resorts that blend luxury with environmental conservation.</p>
-        </div>
-    </div>
-</div>
-
-<div id="activities" class="container my-5 tab-content">
-    <h2>Activities</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <img src="https://www.andbeyond.com/wp-content/uploads/sites/5/Male-Lion-in-a-typical-scene-on-a-game-drive.jpg" class="img-fluid rounded activity-img">
-            <h5>Game Drives</h5>
-            <p>Embark on guided game drives to spot Africa’s majestic wildlife.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="https://www.siyabona.com/images/mara-ballooning-hot-air-ballooning-safari-786x416.jpg" class="img-fluid rounded activity-img">
-            <h5>Hot Air Balloon Rides</h5>
-            <p>Soar above the savannah and enjoy breathtaking aerial views.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="https://www.matriarchafrica.com/wp-content/uploads/2018/07/Victoria-Falls-Village-Tour.jpg" class="img-fluid rounded activity-img">
-            <h5>Cultural Village Tours</h5>
-            <p>Visit local villages and immerse yourself in authentic African culture.</p>
-        </div>
-    </div>
-</div>
-
-<div id="food" class="container my-5 tab-content">
-    <h2>Food</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkQC6w5xkuYzbsjRBEMbKoXUptPmOgdDuKjw&s" class="img-fluid rounded food-img">
-            <h5>Seswaa and Pap</h5>
-            <p>A traditional dish of slow-cooked beef served with maize meal.</p>
-        </div>
-        <div class="col-md-4">
-            <img src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/13385.jpg" class="img-fluid rounded food-img">
-            <h5>Rice and Chicken</h5>
-            <p>A delicious staple meal often served with vegetables.</p>
-        </div>
-    </div>
-</div>
-
-<script>
-    function showTab(tabId) {
-        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        window.scrollTo({ top: document.getElementById(tabId).offsetTop - 80, behavior: 'smooth' });
-    }
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
